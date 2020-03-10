@@ -6,5 +6,6 @@ const homeController = new HomeController();
 
 router.use("/users/", require("./users"));
 router.get("/", homeController.home);
+router.post("/createPost", homeController.createPost);
 
 module.exports = router;

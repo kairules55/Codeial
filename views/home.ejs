@@ -1,0 +1,16 @@
+<section>
+  <h4>Posts</h4>
+  <form action="/createPost" method="POST">
+    <textarea
+      name="content"
+      id="new-post-content"
+      cols="30"
+      rows="3"
+    ></textarea>
+    <input type="submit" value="Post" />
+  </form>
+  <% for(let post of posts) {%>
+  <li><%=post.content%> <%=post.user.name%></li>
+
+  <% }%>
+</section>

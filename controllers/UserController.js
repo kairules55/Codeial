@@ -9,6 +9,10 @@ class UserController {
     response.render("signin");
   }
 
+  profile(request, response) {
+    return response.send("<h1>Profile Page</h1>");
+  }
+
   create(request, response) {
     if (request.body.password != request.body.confirm_password) {
       return response.redirect("back");
@@ -28,6 +32,15 @@ class UserController {
       }
       return response.redirect("back");
     });
+  }
+
+  createSession(request, response) {
+    return response.redirect("/");
+  }
+
+  destroySession(request, response) {
+    request.logout();
+    return response.redirect("/");
   }
 }
 
